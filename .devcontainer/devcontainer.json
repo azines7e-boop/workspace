@@ -1,3 +1,6 @@
 {
-  "postStartCommand": "sudo apt-get install -y tmux --fix-missing 2>/dev/null; sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime; echo Asia/Seoul | sudo tee /etc/timezone; bash /workspaces/workspace/Script/tmux-setup.sh"
+  "remoteEnv": {
+    "TZ": "Asia/Seoul"
+  },
+  "postStartCommand": "sudo apt-get install -y tmux --fix-missing 2>/dev/null; sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime; echo Asia/Seoul | sudo tee /etc/timezone; echo 'export TZ=Asia/Seoul' >> ~/.bashrc; bash /workspaces/workspace/Script/tmux-setup.sh"
 }
