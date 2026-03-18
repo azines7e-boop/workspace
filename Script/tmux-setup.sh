@@ -6,6 +6,9 @@ sessions=("claude" "claude-sub" "clm")
 for session in "${sessions[@]}"; do
   if ! tmux has-session -t "$session" 2>/dev/null; then
     tmux new-session -d -s "$session"
+    if [ "$session" = "clm" ]; then
+      tmux send-keys -t "$session" "export TZ=Asia/Seoul" Enter
+    fi
     echo "세션 생성: $session"
   else
     echo "이미 존재: $session"
