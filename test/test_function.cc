@@ -63,7 +63,7 @@ int main() {
     // Empty
     {
         seperate();
-        task_t a;
+        task_t a; 
         cout<<"sizeof(task_t a) = " << sizeof(a) << endl;
         assert(!a);
         task_t b = a;
