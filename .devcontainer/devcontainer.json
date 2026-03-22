@@ -1,2 +1,3 @@
 {
+  "postStartCommand": "cd /workspaces/workspace/airis-mcp-gateway && docker compose up -d"
 }
